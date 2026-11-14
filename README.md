@@ -128,7 +128,11 @@ When the server cannot read the client's files, which rules out `BULK INSERT`, u
 `loader/upload_epc_nondomestic.ipynb` instead. It sends the rows through pyodbc in chunks, keeps
 the same rule for empty and NULL, builds the three indexes, runs the same digest check and shows
 the table in use. Regenerate it after a rebuild with `python loader/make_notebook.py`.
-The notebook is committed with an empty connection string, `CONN`, which the analyst fills in at step 1. A copy for one site is written with `python loader/make_notebook.py results local/upload_epc_nondomestic.ipynb --site local/site_connection.txt`, where the file holds that site's ODBC connection string on one line. `local/` is ignored by git, and the generator refuses to write such a copy anywhere else inside the repository.
+The notebook is committed with an empty connection string, `CONN`, which the analyst fills in at
+step 1. A copy for one site is written with `python loader/make_notebook.py results
+local/upload_epc_nondomestic.ipynb --site local/site_connection.txt`, where the file holds that
+site's ODBC connection string on one line. `local/` is ignored by git, and the generator refuses to
+write such a copy anywhere else inside the repository.
 
 One column, `IMPROVEMENT_RECOMMENDATIONS`, is `nvarchar(max)`: three of its values are longer than
 the 4,000 characters a bounded `nvarchar` holds. Every text column still has a width, the longest
@@ -210,7 +214,8 @@ resolves to the latest version. Versions, newest first:
 - 0.1.0: 10.5281/zenodo.24226997, the first release: release 2026Q3 of the extract, 95,719 certificates,
   57 columns.
 
-If a source is no longer at its publisher's address, `python tools/restore_sources.py --token-file <file>`
+If a source is no longer at its publisher's address, `python tools/restore_sources.py --token-file
+<file>`
 restores every pinned file from Zenodo: the archive from that draft, the note and the extract
 from the archive, and the two data zone lists from the public records of postcode-simd and
 datazone-ahah. Each file is checked against its pinned SHA256, a file already in place is never
