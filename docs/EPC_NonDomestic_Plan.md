@@ -463,8 +463,8 @@ with its own named check. New or changed cases:
    the load (CSV, manifest, two SQL scripts, loader, upload notebook, data dictionary) copied to
    `onedrive:dataset_healscot/EPC_nondomestic/load_2026Q3/`, sizes and hashes compared.
 5. Done 14 November 2026: the tree ported from uprn-epc `d3d1ea4` as package `epc_nd_ingest`, the
-   registry, `published_columns.yaml` and the generated schema of 57 columns. No git repository
-   was created and nothing was committed or pushed.
+   registry, `published_columns.yaml` and the generated schema of 57 columns. The repository was
+   created on GitHub the same day (`docs/plans/GitHub_and_Provenance_Site_Plan.md`).
 6. Done 14 November 2026: the modules listed above ported for one file, the 8,000 bucket and the
    `max` type added, 103 tests on a synthetic release.
 7. Done 14 November 2026: the real build, 95,719 rows, 46 checks passed (`results/manifest.json`,
@@ -474,8 +474,8 @@ with its own named check. New or changed cases:
    `docs/sql/NOTEBOOK_PROBE_2026-11-14.md`).
 9. Done 14 November 2026: the three join queries, tested in DuckDB and in the probe. The README.
 10. Done 14 November 2026: column descriptions from the note, reviewed against the PDF
-    (`docs/reviews/2026-11-14-column-descriptions.md`). The provenance site generates. It is not
-    published, because there is no repository yet.
+    (`docs/reviews/2026-11-14-column-descriptions.md`). The provenance site is published at
+    https://mtinti.github.io/uprn-epc-nondomestic/.
 11. Done 14 November 2026: the implementation reviewed
     (`docs/reviews/2026-11-14-nondomestic-implementation-review.md`), one finding, fixed and
     probed again (`-response.md` beside it).

@@ -1,6 +1,7 @@
 # Plan: publish to GitHub and publish the column provenance site
 
-Status: proposed, 14 November 2026. Nothing is created, committed or pushed. It follows what
+Status: done on 14 November 2026, except the version tag and the Zenodo DOI of the code, which
+wait for a decision ("What was done", at the end). It follows what
 postcode-simd, datazone-ahah and uprn-epc did: a public repository under `mtinti`, tests on every
 push, and a column provenance site on GitHub Pages served from a `gh-pages` branch.
 
@@ -162,3 +163,21 @@ pages, builds the site, pushes it to `gh-pages` and waits for Pages to build it.
   on in Zenodo's GitHub settings before the release, in a browser, so the release gets a DOI. Add
   a `.zenodo.json` like datazone-ahah's first.
 - Link the two EPC projects to each other in their READMEs.
+
+## What was done, 14 November 2026
+
+- **Repository.** https://github.com/mtinti/uprn-epc-nondomestic, public, one first commit of 88
+  files. No archive, CSV, Parquet, note or data zone list is among them. A scan of every object of
+  a fresh public clone found no site's server name, database name or connection options.
+- **Tests.** The `ci` workflow passed on the first push. Before the push, the tests and the site
+  build were run in a new environment on a copy holding only the tracked files.
+- **Site.** https://mtinti.github.io/uprn-epc-nondomestic/ serves the home page, 57 column pages,
+  the decisions and the checks. No page holds a postcode shape.
+- **Previews.** A throwaway branch published a preview under `preview/`, and deleting the branch
+  removed it.
+- **Pages was switched on by the push of `gh-pages`**, not by the API call this plan gave. GitHub
+  enables Pages by itself for a branch of that name. It also made `gh-pages` the default branch,
+  because it was pushed first. The default was set back to `main`.
+- **The Pages workflow runs on branches only.** As inherited it also ran on a tag push and
+  published a preview for the tag that nothing removes. datazone-ahah has one such folder.
+- **Not done.** No tag, no release and no Zenodo DOI for the code.
