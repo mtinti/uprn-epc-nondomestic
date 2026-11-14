@@ -203,6 +203,14 @@ Government Licence, the archive is held as an unpublished restricted Zenodo draf
 open record (deposition 24224180, reserved DOI 10.5281/zenodo.24224180, which resolves only once
 the record is published), and a copy sits on the HIC OneDrive. The built table is private.
 
+If a source is no longer at its publisher's address, `python tools/restore_sources.py --token-file <file>`
+restores every pinned file from Zenodo: the archive from that draft, the note and the extract
+from the archive, and the two data zone lists from the public records of postcode-simd and
+datazone-ahah. Each file is checked against its pinned SHA256, a file already in place is never
+overwritten, and `--check` shows what would be restored and writes nothing there. While the
+record is an unpublished draft only its owner's token can read it. A build from the restored
+files gave the CSV hash the manifest records (run of 14 November 2026).
+
 ## Documents
 
 - `docs/EPC_NonDomestic_Plan.md`: the plan, the facts found in the file, the design, the decisions.

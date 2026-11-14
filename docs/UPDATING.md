@@ -52,5 +52,9 @@ build with a new `epc_release`, never an update of the old table.
     can share one table if a project wants to compare releases. `source_row` does not carry over
     from one release to the next: match certificates across releases by `rrn`.
 
+After step 9, show that the release can be rebuilt without the publisher: in a copy of the
+repository with an empty `data/sources/`, run `python tools/restore_sources.py --token-file <file>`
+and the build, and compare the CSV hash with the manifest.
+
 The provenance site (`python -m epc_nd_ingest.provenance_site && mkdocs build`) is published by
 `.github/workflows/pages.yml` on every push. Nothing to do by hand.

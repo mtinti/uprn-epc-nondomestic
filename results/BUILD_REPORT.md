@@ -1,8 +1,8 @@
-# Build report: epc_nondomestic, release 2026Q3, 2026-11-14T16:51:27Z
+# Build report: epc_nondomestic, release 2026Q3, 2026-11-14T18:46:18Z
 
 Schema `epc_nondomestic_v1`. 95,719 rows by 57 columns in the Parquet, 57 in the CSV.
 CSV `epc_nondomestic.csv.gz` SHA256 `d43cd944e613c67e6d6f4ab2c5bc7fa6cf2eecea76ab7c4bffbb5c5d6d7ce686`, digest total `176041734596302563122`.
-Parquet SHA256 `d78f22782427744fc013c9ea15833179ec2b95ee422e6b9fc8dd2fde61088928`.
+Parquet SHA256 `eb8be09d031e6f0734a33da9e8958c81fe6bf0d41d1c6f8fc15fb9eacaabae80`.
 
 ## Rows by the year of lodgement on the register
 
@@ -198,7 +198,7 @@ Both in UTF-16 code units, as SQL Server counts an `nvarchar`: a character outsi
 | `readback.parquet.metadata.key` | pass | ["epc_release", "source_row"] |
 | `readback.parquet.metadata.epc_release` | pass | 2026Q3 |
 | `readback.parquet.metadata.decisions_sha256` | pass | 55c429d3f2f88b8712bf15d976063162de8b723ff55d6b5fbd64059f8e9ae8d1 |
-| `readback.parquet.metadata.registry_sha256` | pass | 9f98bfbbe671093a3f4d85cbe0575c7579e694531a9d6443d4f96acb45b9f420 |
+| `readback.parquet.metadata.registry_sha256` | pass | 2dfb3ada0905cfe5ba1957335f3005eee0647911acfce3227ab4cc861f8e8fcd |
 | `readback.parquet.metadata.sources` | pass | [{"file": "epc_nondomestic_2026Q3/extracted/AltHistoricExtract2013to2026ND.csv", "sha256": "304c03a6217d4d220c0595e00fa6c4c096e619dc14b6b26ac5af017fbb2f712d"}] |
 | `readback.parquet.rows` | pass | 95719 |
 | `readback.parquet.row_groups` | pass | 1 |

@@ -1,10 +1,10 @@
 {
- "built_at": "2026-11-14T16:51:27.040045+00:00",
+ "built_at": "2026-11-14T18:46:18.932629+00:00",
  "table": "epc_nondomestic",
  "epc_release": "2026Q3",
  "schema_version": "epc_nondomestic_v1",
  "schema_sha256": "03670b5d6918723114eeac04327a035473a13c5d686e2d053d2e27b6334dac83",
- "registry_sha256": "9f98bfbbe671093a3f4d85cbe0575c7579e694531a9d6443d4f96acb45b9f420",
+ "registry_sha256": "2dfb3ada0905cfe5ba1957335f3005eee0647911acfce3227ab4cc861f8e8fcd",
  "published_columns_sha256": "96b3e79a4c5806226d20c94586300e94a296f910605598cb021e849d589aca2f",
  "contract_sha256": "96356ae04029bde0713ae928fc412e033f9d0e745d747d59d6e3675a13c8a9a3",
  "decisions_sha256": "55c429d3f2f88b8712bf15d976063162de8b723ff55d6b5fbd64059f8e9ae8d1",
@@ -19,7 +19,7 @@
   "rows": 95719,
   "row_groups": 1,
   "columns": 57,
-  "sha256": "d78f22782427744fc013c9ea15833179ec2b95ee422e6b9fc8dd2fde61088928"
+  "sha256": "eb8be09d031e6f0734a33da9e8958c81fe6bf0d41d1c6f8fc15fb9eacaabae80"
  },
  "csv": {
   "file": "epc_nondomestic.csv.gz",
@@ -1893,9 +1893,9 @@
   {
    "name": "readback.parquet.metadata.registry_sha256",
    "passed": true,
-   "detail": "9f98bfbbe671093a3f4d85cbe0575c7579e694531a9d6443d4f96acb45b9f420",
-   "expected": "9f98bfbbe671093a3f4d85cbe0575c7579e694531a9d6443d4f96acb45b9f420",
-   "actual": "9f98bfbbe671093a3f4d85cbe0575c7579e694531a9d6443d4f96acb45b9f420"
+   "detail": "2dfb3ada0905cfe5ba1957335f3005eee0647911acfce3227ab4cc861f8e8fcd",
+   "expected": "2dfb3ada0905cfe5ba1957335f3005eee0647911acfce3227ab4cc861f8e8fcd",
+   "actual": "2dfb3ada0905cfe5ba1957335f3005eee0647911acfce3227ab4cc861f8e8fcd"
   },
   {
    "name": "readback.parquet.metadata.sources",
