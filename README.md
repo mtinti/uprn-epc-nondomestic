@@ -1,5 +1,6 @@
 # uprn-epc-nondomestic
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24226996.svg)](https://doi.org/10.5281/zenodo.24226996)
 [![ci](https://github.com/mtinti/uprn-epc-nondomestic/actions/workflows/ci.yml/badge.svg)](https://github.com/mtinti/uprn-epc-nondomestic/actions/workflows/ci.yml)
 
 **Column provenance site:** https://mtinti.github.io/uprn-epc-nondomestic/ , one page per column: what it is (the
@@ -202,6 +203,12 @@ Because the download URL does not last and the address fields are not under the 
 Government Licence, the archive is held as an unpublished restricted Zenodo draft rather than an
 open record (deposition 24224180, reserved DOI 10.5281/zenodo.24224180, which resolves only once
 the record is published), and a copy sits on the HIC OneDrive. The built table is private.
+
+The code is archived on Zenodo at each release. The concept DOI 10.5281/zenodo.24226996 always
+resolves to the latest version. Versions, newest first:
+
+- 0.1.0: 10.5281/zenodo.24226997, the first release: release 2026Q3 of the extract, 95,719 certificates,
+  57 columns.
 
 If a source is no longer at its publisher's address, `python tools/restore_sources.py --token-file <file>`
 restores every pinned file from Zenodo: the archive from that draft, the note and the extract

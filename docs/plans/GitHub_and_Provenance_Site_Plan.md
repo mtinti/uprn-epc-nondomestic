@@ -1,7 +1,6 @@
 # Plan: publish to GitHub and publish the column provenance site
 
-Status: done on 14 November 2026, except the version tag and the Zenodo DOI of the code, which
-wait for a decision ("What was done", at the end). It follows what
+Status: done on 14 November 2026 ("What was done", at the end). It follows what
 postcode-simd, datazone-ahah and uprn-epc did: a public repository under `mtinti`, tests on every
 push, and a column provenance site on GitHub Pages served from a `gh-pages` branch.
 
@@ -59,7 +58,7 @@ certificate's register number, UPRN and dates, as uprn-epc's does, and no addres
 | Local references in the ingestion plan | Name the public repository for uprn-epc. Describe the two local notes without a path | A reader cannot open them |
 | The OneDrive path | Leave it | It is where the files are, and the sibling repository already shows it |
 | First commit | One commit holding the whole tree, with the co-author line uprn-epc's commits carry | The work was not committed step by step. A made-up history would mislead |
-| Version tag and Zenodo DOI | Not yet. Tag `v0.1.0` after the first load at HIC passes | The Windows import route is untested. A fix after the load would otherwise need a second release |
+| Version tag and Zenodo DOI | Decided 14 November 2026: release `v0.1.0` now | The Windows import route is untested. A fix after the load at HIC will be a second release |
 
 ## Step 1. Tidy the tree
 
@@ -180,4 +179,7 @@ pages, builds the site, pushes it to `gh-pages` and waits for Pages to build it.
   because it was pushed first. The default was set back to `main`.
 - **The Pages workflow runs on branches only.** As inherited it also ran on a tag push and
   published a preview for the tag that nothing removes. datazone-ahah has one such folder.
-- **Not done.** No tag, no release and no Zenodo DOI for the code.
+- **Release.** Version 0.1.0 was tagged and released the same day, and its code archived on
+  Zenodo: 10.5281/zenodo.24226996 for every release, 10.5281/zenodo.24226997 for 0.1.0. Zenodo is not linked
+  to the repository, so the archive was made by uploading the release's zip to a new record. The
+  next release needs the same step, or the link switched on in Zenodo first.

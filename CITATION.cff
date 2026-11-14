@@ -15,6 +15,7 @@ authors:
     affiliation: "Health Informatics Centre (HIC), University of Dundee"
     orcid: "https://orcid.org/0000-0002-0051-017X"
 version: "0.1.0"
+doi: "10.5281/zenodo.24226996"   # the concept DOI: every release; each release also has its own
 license: MIT
 repository-code: "https://github.com/mtinti/uprn-epc-nondomestic"
 keywords:
