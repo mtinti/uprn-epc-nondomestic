@@ -1,0 +1,21 @@
+{
+  "build_checks": {
+    "checks": 44,
+    "blocking_passed": 44,
+    "blocking_failed": 0
+  },
+  "bounded_column": {
+    "name": "ADDRESS1",
+    "declared_sql_type": "nvarchar(100)",
+    "python_characters": 100,
+    "sql_storage_units_required": 101,
+    "fits_sql_column": false
+  },
+  "max_column": {
+    "name": "IMPROVEMENT_RECOMMENDATIONS",
+    "notebook_longest_sent": 4451,
+    "datalength_divided_by_two_if_preserved": 4452,
+    "notebook_length_comparison_would_pass": false
+  },
+  "sql_server_executed": false
+}

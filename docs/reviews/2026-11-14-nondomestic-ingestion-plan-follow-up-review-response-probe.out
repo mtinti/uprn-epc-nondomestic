@@ -1,0 +1,8 @@
+join_by_uprn.sql: 21 columns, reads the clock: False
+   cohort_row_id, pseudo_id, cohort_date, epc_status, epc_inspection_date, epc_lodgement_date, epc_age_days, epc_lodged_before_inspection, CURRENT_ENERGY_RATING, current_energy_efficiency_int, POTENTIAL_ENERGY_RATING, total_floor_area_int, PROPERTY_TYPE, BUILT_FORM, CONSTRUCTION_AGE_BAND, TENURE, MAIN_FUEL, historic_flag, rrn, epc_tie_candidates, epc_tie_rule
+join_latest_by_uprn.sql: 14 columns, reads the clock: False
+   cohort_row_id, pseudo_id, epc_status, epc_lodgement_date, CURRENT_ENERGY_RATING, current_energy_efficiency_int, POTENTIAL_ENERGY_RATING, total_floor_area_int, PROPERTY_TYPE, BUILT_FORM, CONSTRUCTION_AGE_BAND, TENURE, MAIN_FUEL, rrn
+join_by_postcode.sql: 20 columns, reads the clock: False
+   cohort_row_id, pseudo_id, cohort_date, epc_status, dwelling, dwelling_status, uprn_osg, epc_inspection_date, epc_lodgement_date, epc_age_days, epc_lodged_before_inspection, CURRENT_ENERGY_RATING, current_energy_efficiency_int, total_floor_area_int, PROPERTY_TYPE, BUILT_FORM, CONSTRUCTION_AGE_BAND, TENURE, epc_tie_candidates, epc_tie_rule
+columns of the dated query that the undated query does not return: ['cohort_date', 'epc_age_days', 'epc_inspection_date', 'epc_lodged_before_inspection', 'epc_tie_candidates', 'epc_tie_rule', 'historic_flag']
+all assertions passed

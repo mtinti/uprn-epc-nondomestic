@@ -1,0 +1,134 @@
+bytes 141193680 sha256 304c03a6217d4d220c0595e00fa6c4c096e619dc14b6b26ac5af017fbb2f712d
+byte order mark True | CRLF 95721 | LF 95721 | CR without LF 0
+columns 38 | label row fields 38 | fields per data row {38: 95719}
+U+FFFD in the two header rows 1
+
+name | label | empty | distinct | longest | cells with edge whitespace
+  HISTORIC | Historical | 0 | 2 | 5 | 0
+  BUILDING_REFERENCE_NUMBER | Property_UPRN | 0 | 81302 | 10 | 0
+  OSG_REFERENCE_NUMBER | OSG_UPRN | 33906 | 51880 | 12 | 0
+  ADDRESS1 | Address1 | 1812 | 69329 | 85 | 208
+  ADDRESS2 | Address2 | 31443 | 25856 | 50 | 346
+  POST_TOWN | Post Town | 220 | 1697 | 37 | 233
+  POSTCODE | Postcode | 0 | 26575 | 10 | 18
+  INSPECTION_DATE | Date of Assessment | 0 | 4855 | 10 | 0
+  LODGEMENT_DATE | Date of Certificate | 0 | 4842 | 10 | 0
+  PROPERTY_TYPE_SHORT | Property Short Description | 0 | 23 | 30 | 0
+  PROPERTY_TYPE | Property Type | 0 | 43 | 76 | 0
+  FLOOR_AREA | Total floor area (m�) | 0 | 6891 | 6 | 0
+  CURRENT_ENERGY_PERFORMANCE_RATING | Current Energy Performance Rating | 0 | 790 | 5 | 0
+  CURRENT_ENERGY_PERFORMANCE_BAND | Energy Band | 0 | 14 | 10 | 0
+  POTENTIAL_ENERGY_PERFORMANCE_RATING | Potential Energy Performance Rating | 0 | 648 | 12 | 0
+  POTENTIAL_ENERGY_PERFORMANCE_BAND | Potential Band | 0 | 15 | 12 | 0
+  NEW_BUILD_ENERGY_PERFORMANCE_RATING | New Build Benchmark Rating | 0 | 477 | 4 | 0
+  NEW_BUILD_ENERGY_PERFORMANCE_BAND | New Build Benchmark Band | 0 | 13 | 2 | 0
+  MEETS_2002_STANDARD | Compliant 2002 | 22776 | 3 | 1 | 0
+  ASSET_RATING | Comparative Asset Rating | 0 | 542 | 12 | 0
+  ASSET_RATING_BAND | Comparative Energy Band | 0 | 9 | 12 | 0
+  BUILDING_EMISSIONS | EPC Rating BER | 0 | 23024 | 8 | 0
+  RENEWABLE_SOURCES | Renewable Energy Source | 0 | 7 | 20 | 0
+  ELECTRICITY_SOURCE | Electricity_Source | 0 | 1 | 13 | 0
+  MAIN_HEATING_FUEL | Main Heating Fuel | 0 | 14 | 37 | 0
+  BUILDING_ENVIRONMENT | Building Environment | 0 | 6 | 38 | 0
+  PRIMARY_ENERGY_VALUE | Actual Building Data Primary Energy Indicator | 0 | 2691 | 6 | 0
+  APPROXIMATE_ENERGY_USE | Actual Building Data Approx Energy Use | 0 | 1429 | 6 | 0
+  IMPROVEMENT_RECOMMENDATIONS | Recommendations | 2327 | 71227 | 4451 | 93392
+  LOCAL_AUTHORITY | Local Authority Identifier | 2553 | 39 | 4 | 0
+  DATA_ZONE | Data Zone | 2553 | 5191 | 64 | 0
+  CONSTITUENCY | Ward Code | 2553 | 362 | 6 | 0
+  CONSTITUENCY_LABEL | Ward Name | 2553 | 360 | 53 | 0
+  TRANSACTION_TYPE | Transaction Type | 0 | 7 | 50 | 0
+  TARGET_EMISSIONS | EPC Rating TER | 0 | 11473 | 7 | 0
+  DATA_ZONE_2011 | Data Zone 2011 | 1932 | 5384 | 75 | 0
+  CREATED_AT | Lodgement Date | 0 | 95653 | 19 | 0
+  REPORT_REFERENCE_NUMBER | RRN | 126 | 95594 | 24 | 0
+
+value lists
+  HISTORIC [('False', 79874), ('True', 15845)]
+  PROPERTY_TYPE_SHORT [('Retail/Financial', 31328), ('Office/Workshop', 24253), ('Restaurant/Cafes/takeaway', 9182), ('General Industrial', 6349), ('Storage/Distribution', 5808), ('Education', 3646), ('Hotel', 3501), ('General Assembly/Leisure', 2526), ('Community/Day Centre', 2300), ('Hospitals/Care Home', 1894), ('Primary Healthcare Building', 1478), ('Universities/college', 890), ('Residential space', 792), ('Library/Museum/Gallery', 662), ('Emergency service', 433), ('Residential school', 255), ('Passenger terminal', 116), ('Crown/County Court', 90), ('Stand alone utility block', 82), ('Secure Residential Institution', 74), ('Miscellaneous 24 hr activity', 40), ('Misc. 24 hr activity', 17), ('Car Park 24 hrs', 3)]
+  PROPERTY_TYPE [('Retail/Financial and Professional services', 23200), ('Offices and Workshop businesses', 18499), ('A1/A2 Retail and Financial/Professional services', 8128), ('Restaurants and Cafes/Drinking Establishments/Takeaways', 7143), ('B1 Offices and Workshop businesses', 5754), ('General Industrial and Special Industrial Groups', 4618), ('Storage or Distribution', 4538), ('Non-residential Institutions: Education', 3034), ('Hotels', 2656), ('A3/A4/A5 Restaurant and Cafes/Drinking Establishments and Hot Food takeaways', 2039), ('General Assembly and Leisure, Night Clubs, and Theatres', 1972), ('Non-residential Institutions: Community/Day Centre', 1834), ('B2 to B7 General Industrial and Special Industrial Groups', 1731), ('Residential Institutions: Hospitals and Care Homes', 1527), ('B8 Storage or Distribution', 1270), ('Non-residential Institutions: Primary Health Care Building', 1198), ('C1 Hotels', 845), ('Residential spaces', 792), ('Residential Institutions: Universities and colleges', 750), ('D1 Non-residential Institutions - Education', 612), ('D2 General Assembly and Leisure plus Night Clubs and Theatres', 554), ('Non-residential Institutions: Libraries, Museums, and Galleries', 494), ('D1 Non-residential Institutions - Community/Day Centre', 466), ('C2 Residential Institutions - Hospitals and Care Homes', 367), ('Others: Emergency services', 350), ('D1 Non-residential Institutions - Primary Health Care Building', 280), ('Residential Institutions: Residential schools', 175), ('D1 Non-residential Institutions - Libraries Museums and Galleries', 168), ('C2 Residential Institutions - Universities and colleges', 140), ('Others: Passenger terminals', 108), ('Others - Emergency services', 83), ('C2 Residential Institutions - Residential schools', 80), ('Secure Residential Institutions', 59), ('Others: Stand alone utility block', 58), ('Non-residential Institutions: Law Courts', 55), ('Others: Miscellaneous 24hr activities', 40), ('D1 Non-residential Institutions - Crown and County Courts', 35), ('Others - Stand alone utility block', 24), ('Others - Miscellaneous 24hr activities', 17), ('C2A Secure Residential Institutions', 15), ('Others - Passenger terminals', 8), ('Others: Car Parks 24 hrs', 2), ('Others - Car Parks 24 hrs', 1)]
+  TRANSACTION_TYPE [('Mandatory issue (Marketed sale)', 38107), ('Mandatory issue (Property to let)', 30640), ('Voluntary (No legal requirement for an EPC)', 11631), ('Mandatory issue (Non-marketed sale)', 7668), ('Mandatory issue (Property on construction)', 4238), ('Mandatory issue (Display in public building)', 2717), ('Voluntary re-issue (A valid EPC is already lodged)', 718)]
+  CURRENT_ENERGY_PERFORMANCE_BAND [('G', 26611), ('E', 7252), ('D', 7208), ('E+', 7130), ('C', 6882), ('B', 6207), ('D+', 5872), ('C+', 5703), ('F+', 5310), ('B+', 5141), ('A', 5048), ('F', 5013), ('A+', 2154), ('Carbon Neu', 188)]
+  POTENTIAL_ENERGY_PERFORMANCE_BAND [('G', 12139), ('A', 9385), ('C', 8892), ('B', 7981), ('D', 7723), ('C+', 7467), ('E+', 7267), ('B+', 7231), ('D+', 7198), ('E', 6175), ('A+', 4430), ('F+', 4201), ('F', 3470), ('Data removed', 1712), ('Carbon Neu', 448)]
+  NEW_BUILD_ENERGY_PERFORMANCE_BAND [('A+', 15892), ('B+', 15555), ('B', 14254), ('A', 12951), ('C+', 10258), ('C', 9235), ('D+', 4369), ('D', 3147), ('G', 2789), ('E+', 2769), ('E', 2062), ('F+', 1383), ('F', 1055)]
+  ASSET_RATING_BAND [('C', 23343), ('D', 19657), ('B', 13302), ('Data removed', 12484), ('E', 10510), ('G', 7022), ('F', 5400), ('A', 3868), ('A+', 133)]
+  MEETS_2002_STANDARD [('N', 48278), ('Y', 24665), ('', 22776)]
+  RENEWABLE_SOURCES [('None', 64135), ('Heat pumps', 23646), ('Other non-calculated', 4722), ('Photovoltaics', 2335), ('CHP generators', 632), ('Solar thermal', 144), ('Wind generators', 105)]
+  ELECTRICITY_SOURCE [('Grid supplied', 95719)]
+  BUILDING_ENVIRONMENT [('Heating and Natural Ventilation', 72152), ('Air Conditioning', 16682), ('Heating and Mechanical Ventilation', 4964), ('Unconditioned', 1442), ('Mixed-mode with Natural Ventilation', 265), ('Mixed-mode with Mechanical Ventilation', 214)]
+  MAIN_HEATING_FUEL [('Grid Supplied Electricity', 51396), ('Natural Gas', 37131), ('Oil', 3234), ('Other', 1470), ('Biomass', 953), ('LPG', 922), ('District Heating', 415), ('Dual Fuel Appliances (Mineral + Wood)', 116), ('Waste Heat', 37), ('Biogas', 26), ('Coal', 11), ('Anthracite', 3), ('Grid Displaced Electricity', 3), ('Smokeless Fuel (inc Coke)', 2)]
+'Data removed' cells by column {'POTENTIAL_ENERGY_PERFORMANCE_RATING': 1712, 'POTENTIAL_ENERGY_PERFORMANCE_BAND': 1712, 'ASSET_RATING': 12484, 'ASSET_RATING_BAND': 12484}
+number columns: shapes with digits folded to 9, then smallest and largest
+  FLOOR_AREA [('9', 95719)] 4.0 138037.0 | most decimals 0
+  CURRENT_ENERGY_PERFORMANCE_RATING [('9', 95535), ('-9', 184)] -9098.0 42155.0 | most decimals 0
+  POTENTIAL_ENERGY_PERFORMANCE_RATING [('9.9', 93559), ('Data removed', 1712), ('-9.9', 448)] -5455.0 9648.0 | most decimals 2
+  NEW_BUILD_ENERGY_PERFORMANCE_RATING [('9', 95694), ('-9', 25)] 0.0 3059.0 | most decimals 0
+  ASSET_RATING [('9', 83101), ('Data removed', 12484), ('-9', 134)] -13637.0 5154.0 | most decimals 0
+  BUILDING_EMISSIONS [('9.9', 95525), ('-9.9', 194)] -9097.96 42154.6 | most decimals 2
+  PRIMARY_ENERGY_VALUE [('9', 95617), ('-9', 102)] -17831.0 238089.0 | most decimals 0
+  APPROXIMATE_ENERGY_USE [('9', 95719)] 2.0 102211.0 | most decimals 0
+  TARGET_EMISSIONS [('9.9', 95694), ('-9.9', 25)] -0.32 3058.51 | most decimals 2
+date shapes {'INSPECTION_DATE': [('9999-99-99', 95719)], 'LODGEMENT_DATE': [('9999-99-99', 95719)], 'CREATED_AT': [('99/99/9999 99:99:99', 95719)]}
+RRN: empty 126 | distinct non-empty 95593 | repeated non-empty 0 | shapes [('9999-9999-9999-9999-9999', 95593), ('', 126)]
+distinct UPRN 51879 | UPRN with 2+ register numbers 0 | register number with 2+ UPRN 0
+current certificates per register number [(1, 79874)]
+current certificates per UPRN [(1, 50636)] | UPRN with none 1243
+rows 95719 duplicate whole rows 0
+control characters by column {('ADDRESS2', ('0x9',)): 217, ('POST_TOWN', ('0x9',)): 92, ('ADDRESS1', ('0x9',)): 208, ('POSTCODE', ('0x9',)): 5}
+non-ASCII cells by column {'CONSTITUENCY_LABEL': 503, 'ADDRESS1': 135, 'IMPROVEMENT_RECOMMENDATIONS': 29, 'ADDRESS2': 40, 'POST_TOWN': 1}
+astral characters (two UTF-16 units) 0
+U+FFFD data cells [(58498, 'ADDRESS1', '<address cell, not printed>')]
+non-ASCII characters [('0xe8', 286), ('0xf2', 218), ('0x2019', 90), ('0xe9', 46), ('0x2013', 38), ('0xb2', 9), ('0x2014', 7), ('0xbb', 6), ('0xe0', 5), ('0xa3', 5), ('0xc9', 3), ('0xe7', 1), ('0xfffd', 1), ('0xe2', 1), ('0x20ac', 1)]
+IMPROVEMENT_RECOMMENDATIONS: longest [4451, 4194, 4130, 3921, 3801] over 4000: 3 over 3330: 48 over 2000: 7575
+  trailing space cells 93392 leading 0
+  measures per cell (split on |): max 32
+longest row in characters 4845
+OSG empty: total 33906 by lodgement year % {'2013': 30.5, '2014': 26.7, '2015': 32.2, '2016': 34.0, '2017': 33.6, '2018': 33.9, '2019': 38.8, '2020': 37.1, '2021': 40.6, '2022': 35.1, '2023': 38.0, '2024': 38.6, '2025': 39.9, '2026': 38.1}
+OSG digit lengths [(8, 522), (9, 47072), (10, 5239), (11, 399), (12, 8581)] leading zero 0 range 35000156 906700558856
+OSG 8-digit: first three digits [('350', 475), ('352', 47)]
+BRN range 1000001800 1236862449
+BRN: distinct 81302 with no current certificate 1428 of which with a UPRN 1243
+BRN that has a UPRN in one row and none in another 0
+certificates per BRN [(1, 68918), (2, 10664), (3, 1457), (4, 218), (5, 41), (6, 3), (7, 1)]
+CREATED_AT range 2013-01-29 10:48:59 2026-09-30 22:24:34 | inspection range 2002-07-27 2108-02-01 | lodgement 2013-01-29 2026-09-30
+CREATED_AT date equals LODGEMENT_DATE 85822 differs 9897 max abs days 1531
+lodgement minus inspection, days {'1-7': 39001, 'over a year': 1411, '8-30': 30008, 'same day': 7979, '31-365': 17125, 'before inspection': 195} median 8 min -32856 max 7346
+inspection after extract date 2026-10-21 1 inspection before 2012 521
+rows in file order by lodgement date? inversions 45914 by CREATED_AT 46325
+first rows CREATED_AT ['2014-02-11 20:59:26', '2016-04-16 21:17:09', '2026-06-22 15:21:16'] last ['2019-12-12 12:01:24', '2019-12-12 12:47:04', '2017-01-05 16:05:30']
+UPRN and inspection day with 2+ certificates 1 sizes Counter({2: 1}) current among them [1]
+UPRNs whose latest inspection day carries 2+ certificates 1
+UPRNs where the current certificate is not the latest inspected 1507 of 51879
+POTENTIAL rating fractional part [('00', 94007)]
+rating minus BER rounded half up: zero 95246 abs 1 473 more 0
+'-0' cells {'NEW_BUILD_ENERGY_PERFORMANCE_RATING': 25}
+leading zeros or plus signs in number columns {'FLOOR_AREA': 0, 'CURRENT_ENERGY_PERFORMANCE_RATING': 0, 'NEW_BUILD_ENERGY_PERFORMANCE_RATING': 0, 'ASSET_RATING': 0, 'PRIMARY_ENERGY_VALUE': 0, 'APPROXIMATE_ENERGY_USE': 0, 'BUILDING_EMISSIONS': 0, 'TARGET_EMISSIONS': 0}
+FLOOR_AREA: zero 0 under 15 186 over 1500 12594 over 50000 28
+band disagrees with the cut of the rating 4 [(('0', 'Carbon Neu'), 4)]
+band text values ['A', 'A+', 'B', 'B+', 'C', 'C+', 'Carbon Neu', 'D', 'D+', 'E', 'E+', 'F', 'F+', 'G'] | potential ['A', 'A+', 'B', 'B+', 'C', 'C+', 'Carbon Neu', 'D', 'D+', 'Data removed', 'E', 'E+', 'F', 'F+', 'G']
+Data removed pairs: potential rating without band or reverse 0 asset 0
+Data removed by lodgement year (asset) [('2013', 5824), ('2014', 2888), ('2015', 1628), ('2016', 562), ('2017', 118), ('2018', 81), ('2019', 130), ('2020', 135), ('2021', 123), ('2022', 178), ('2023', 192), ('2024', 279), ('2025', 188), ('2026', 158)]
+MEETS_2002_STANDARD empty by lodgement before/after 2016-03-20 Counter({(False, 'N'): 48277, (False, 'Y'): 24664, (True, ''): 22776, (True, 'N'): 1, (True, 'Y'): 1})
+postcode: cells with a tab 5 edge whitespace 18 inner double space 0 lower case 0
+pc_norm length [(3, 1), (4, 1), (5, 5594), (6, 52875), (7, 37248)] not a full postcode shape 3
+postcode areas outside Scotland [('WH', 4), ('DH', 2), ('K', 2), ('GD', 1), ('KH', 1), ('AN', 1), ('L', 1), ('CA', 1), ('BD', 1), ('NE', 1), ('AH', 1), ('AD', 1)]
+LOCAL_AUTHORITY not 00Q/00R and not empty Counter({'00EM': 3, '00EJ': 2, '16UD': 2, '00BY': 1, '16UB': 1, '00CX': 1}) postcode areas of those rows Counter({'TD': 2, 'DH': 2, 'DG': 2, 'L': 1, 'CA': 1, 'BD': 1, 'NE': 1})
+geography block empty together [((False, False, False, False), 91898), ((True, True, True, False), 1889), ((False, False, False, True), 1268), ((True, True, True, True), 664)]
+pinned lists: 2011 6976 2001 6505
+DATA_ZONE {'code': 92872, 'empty': 2553, 'not_a_datazone': 294} examples of other shapes [('00QQMB ()', 21), ('00QSMH ()', 18), ('00QZMT ()', 18), ('00QZMS ()', 16)]
+DATA_ZONE_2011 {'code': 93747, 'empty': 1932, 'not_a_datazone': 40} examples of other shapes [('NA (NA)', 40)]
+DATA_ZONE codes found in the 2011 list instead 0
+PROPERTY_TYPE_SHORT by current/all [('Retail/Financial', 31328), ('Office/Workshop', 24253), ('Restaurant/Cafes/takeaway', 9182), ('General Industrial', 6349), ('Storage/Distribution', 5808)]
+   Hospitals/Care Home rows 1894 current 1484 current with UPRN 955 distinct UPRN 1024
+   Hotel rows 3501 current 2697 current with UPRN 1915 distinct UPRN 2156
+   Residential school rows 255 current 198 current with UPRN 80 distinct UPRN 96
+   Residential space rows 792 current 636 current with UPRN 286 distinct UPRN 357
+   Secure Residential Institution rows 74 current 66 current with UPRN 9 distinct UPRN 11
+   Universities/college rows 890 current 777 current with UPRN 175 distinct UPRN 184
+PROPERTY_TYPE to PROPERTY_TYPE_SHORT is many to one True
+UPRNs in both registers 2005
+  by type of the current non-domestic certificate [('no current certificate', 1162), ('Retail/Financial', 240), ('Office/Workshop', 123), ('Hotel', 122), ('Restaurant/Cafes/takeaway', 89), ('Residential space', 83), ('Hospitals/Care Home', 46), ('Education', 26), ('Community/Day Centre', 23), ('General Assembly/Leisure', 23), ('Storage/Distribution', 17), ('Primary Healthcare Building', 16), ('General Industrial', 15), ('Emergency service', 6), ('Library/Museum/Gallery', 5), ('Residential school', 5), ('Universities/college', 3), ('Stand alone utility block', 1)]
+  with any certificate of the type [('Retail/Financial', 559), ('Office/Workshop', 404), ('Hotel', 336), ('Restaurant/Cafes/takeaway', 183), ('Residential space', 144), ('Hospitals/Care Home', 84), ('Community/Day Centre', 57), ('Education', 55)]
+UPRNs with two or more PROPERTY_TYPE_SHORT over their certificates 2266
+register numbers with two or more pc_norm 258
+register number and inspection day with 2+ certificates 11 | with a UPRN 1 | current certificates per pair [(0, 1), (1, 10)]

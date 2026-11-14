@@ -1,0 +1,38 @@
+# What leaves the build: the CSV rendering of the table. Version 1, 14 November 2026. The dialect
+# and the digest definition are those of postcode-simd, datazone-ahah and uprn-epc, unchanged, so
+# the same import and check recipe applies. Every column goes out, the address lines included: the
+# CSV travels only to the HIC OneDrive and into the HIC SQL Server, where the address lines are the
+# only key for the certificates without a Gazetteer UPRN (decision address-lines-loaded). Nothing
+# built leaves the safe haven. The version names the dialect and digest format.
+version: 1
+
+dialect:
+  delimiter: ','
+  quoting: minimal
+  encoding: utf-8
+  line_ending: "\n"
+  compression: gzip         # written with mtime 0, so the same rows give the same bytes
+
+# How a value becomes text. decimal: fixed notation, always 4 fractional digits, so the CSV, the
+# digest and SQL Server's CONVERT(varchar, decimal(19,4)) agree to the byte. Integers: plain.
+# date: yyyy-mm-dd (SQL style 23). datetime: yyyy-mm-dd hh:mm:ss (style 120). bool: 0 or 1.
+# A published empty string and a NULL are both an empty cell in the CSV; the import script
+# restores the empty string on published columns and NULL on derived ones, from the schema.
+values:
+  decimal_places: 4
+  empty: ''
+
+tables:
+  epc_nondomestic:
+    file: epc_nondomestic.csv.gz
+    exclude: []
+
+digest:
+  version: 1
+  hash: sha256
+  null_marker: "\0"
+  separator: "\x1F"
+  reserved: ["\0", "\x1F"]
+  prefix_bytes: 8
+  signed: true
+  total: decimal_string

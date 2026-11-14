@@ -1,0 +1,35 @@
+== Finding 2a. load_schema refuses a string column without an integer width
+  width 'max': ValueError: LONG is a string without a width
+  width None: ValueError: LONG is a string without a width
+  width 8000: accepted
+== Finding 2b. load_registry refuses a member without a year
+  one member, no year: KeyError: 'year'
+== Finding 2c. the notebook's column pattern drops an nvarchar(max) column
+  columns parsed from a three-column definition: ['A', 'B']
+== Finding 3. postcode fallback and a building whose postcode changed
+  register numbers with two or more pc_norm: 258
+  as of 30 September 2026, building and postcode pairs the inherited selection returns although the building's latest certificate has another postcode: 262
+  pairs returned when the latest certificate is chosen first and its postcode compared after: 81302 of 81302 buildings
+  uprn-epc has the same query. Register numbers with two or more pc_norm in epc_domestic 2026Q2: 1593
+== Finding 4. the cohort side must normalise like the source side
+  cohort rule spaces only, as uprn-epc's query: matches source key EH11AA in 1 of 3
+  cohort rule spaces and tabs: matches source key EH11AA in 3 of 3
+  pc_norm values in the extract with a character other than A to Z and 0 to 9: 0
+== Finding 5. where 'Data removed' occurs, against the typed copies the plan named
+  FLOOR_AREA: 'Data removed' 0, neither a number nor 'Data removed' 0
+  CURRENT_ENERGY_PERFORMANCE_RATING: 'Data removed' 0, neither a number nor 'Data removed' 0
+  BUILDING_EMISSIONS: 'Data removed' 0, neither a number nor 'Data removed' 0
+  PRIMARY_ENERGY_VALUE: 'Data removed' 0, neither a number nor 'Data removed' 0
+  POTENTIAL_ENERGY_PERFORMANCE_RATING: 'Data removed' 1712, neither a number nor 'Data removed' 0
+  ASSET_RATING: 'Data removed' 12484, neither a number nor 'Data removed' 0
+== Finding 6. UPRNs in both registers, by type, under an explicit rule
+  shared UPRNs: 2005
+  Hospitals/Care Home: last row in file 82 | any certificate 84 | current certificate 46
+  by type of the current certificate: [('no current certificate', 1162), ('Retail/Financial', 240), ('Office/Workshop', 123), ('Hotel', 122), ('Restaurant/Cafes/takeaway', 89), ('Residential space', 83), ('Hospitals/Care Home', 46), ('Education', 26), ('General Assembly/Leisure', 23), ('Community/Day Centre', 23), ('Storage/Distribution', 17), ('Primary Healthcare Building', 16), ('General Industrial', 15), ('Emergency service', 6), ('Residential school', 5), ('Library/Museum/Gallery', 5), ('Universities/college', 3), ('Stand alone utility block', 1)]
+  after shuffling the rows: current-certificate breakdown unchanged True | any-certificate unchanged True | last-row breakdown unchanged False
+  UPRNs with two or more PROPERTY_TYPE_SHORT over their certificates: 2266
+== Shared UPRNs with no current non-domestic certificate: which register lodged last
+  shared UPRNs with no current non-domestic certificate: 1162 | a domestic certificate was lodged after the last non-domestic one: 1154 | the UPRN has a current domestic certificate: 1156
+== Same-day pairs by register number
+  register number and inspection day with two certificates: 11 | with a UPRN: 1 | current certificates per pair: [(0, 1), (1, 10)]
+all assertions passed

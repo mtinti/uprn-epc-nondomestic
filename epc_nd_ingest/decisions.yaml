@@ -1,0 +1,99 @@
+# Decision log of the non-domestic EPC build. Each entry is dated and says what was decided and
+# why. Its SHA256 travels in the Parquet metadata and the manifest. The reasoning in full is in
+# docs/EPC_NonDomestic_Plan.md and the two reviews of 14 November 2026 in docs/reviews/. Several
+# entries carry over a decision of uprn-epc (github.com/mtinti/uprn-epc, epc_ingest/decisions.yaml)
+# with this release's evidence, and say so.
+# status: in_force or superseded. An entry that changes an earlier one names it in `amends`
+# and says in `keeps` what of the earlier entry still stands.
+version: 1
+decisions:
+  - date: 2026-11-14
+    id: one-table-per-certificate
+    decision: One table, epc_nondomestic, one row per published certificate, superseded certificates included, keyed by (epc_release, source_row).
+    why: The published grain is the certificate. REPORT_REFERENCE_NUMBER is empty in 126 rows, so no published key covers every row, and the file position is the only stable identity. The extract is one file in no order, so the key has no year and source_row means nothing beyond this release. A later quarterly release is a new build with a new epc_release, never an update.
+    status: in_force
+  - date: 2026-11-14
+    id: one-file-one-member
+    decision: The registry names exactly one member, identified by its file. The check that replaces uprn-epc's file-year rule is that no CREATED_AT is later than the last day of the release quarter, which the registry records as quarter_end.
+    why: uprn-epc placed a row in its annual file by the year of CREATED_AT. This extract has no annual files. A CREATED_AT after the quarter the release covers would mean the file is not the release the registry describes. In 2026Q3 CREATED_AT runs from 29 January 2013 to 30 September 2026.
+    status: in_force
+  - date: 2026-11-14
+    id: values-as-published
+    decision: All 38 published columns are kept as text exactly as published, in published order, under the publisher's names, trailing spaces and tabs included. Typed copies are derived beside them and the text is never removed.
+    why: The text is the record, and the digest over the text proves fidelity. A typed copy is a convenience by a documented rule. In 2026Q3, 93,392 IMPROVEMENT_RECOMMENDATIONS cells end with a space, 517 address cells and 5 postcodes hold a tab, and one ADDRESS1 cell holds the replacement character U+FFFD. All are kept.
+    status: in_force
+  - date: 2026-11-14
+    id: uprn-as-integer
+    decision: uprn_osg is a bigint and is the only column a UPRN join compares. The published text stays as provenance.
+    why: Carried over from uprn-epc. UPRNs have 8 to 12 digits because each council has its own number range, so a padded cohort UPRN matches only once both sides are integers. In 2026Q3 the 522 certificates with an 8-digit UPRN start 350 or 352, the range uprn-epc found in Clackmannanshire.
+    status: in_force
+  - date: 2026-11-14
+    id: derived-names-and-nullability
+    decision: Derived columns carry a kind suffix (_parsed, _flag, _int, _num) or are a new word, never a published name in another case. Published columns are NOT NULL and hold the empty string where the file is empty. Derived columns take the nullability the schema declares. The nullable ones are NULL only in their documented missing case, and a required value that does not parse stops the build.
+    why: Carried over from uprn-epc. SQL Server compares identifiers under the database collation, case-insensitive by default. Empty and NULL mean different things and must survive the CSV, the import and the digest.
+    status: in_force
+  - date: 2026-11-14
+    id: width-is-accepted-length
+    decision: Every text column has an integer width, the longest value the build accepts, from the measured longest value and the next bucket. The buckets end at 8,000. Widths and lengths are counted in UTF-16 code units, as SQL Server counts an nvarchar, so a character outside the Basic Multilingual Plane counts as two. SQL Server stores a column as nvarchar(width) when the width is up to 4,000 and as nvarchar(max) above. The row digest converts the first operand of each concatenation chunk to nvarchar(max).
+    why: IMPROVEMENT_RECOMMENDATIONS reaches 4,451 characters and 3 cells pass 4,000, the most a bounded nvarchar holds, and the value must stay as published. Keeping the width an integer keeps the schema check for every column, this one included. uprn-epc's rule of no nvarchar(max) rested on a longest value of 3,330 characters and cannot hold here. The unit is SQL Server's because a count of characters would accept a value that does not fit its column (implementation review of 14 November 2026). Release 2026Q3 holds no character outside the Basic Multilingual Plane, so the two counts agree for it.
+    status: in_force
+  - date: 2026-11-14
+    id: postcode-rule-spaces-and-tabs
+    decision: pc_norm is POSTCODE in upper case with every space and every tab removed, NULL where nothing is left. The postcode join normalises the cohort postcode by the same rule. Nothing is repaired.
+    why: Five postcodes of 2026Q3 hold a tab and 18 have a space or a tab at an end. uprn-epc's rule removes spaces only and would leave the tab in, so those postcodes would never match. A rule applied to one side only would fail the same way for a cohort value with a tab.
+    status: in_force
+  - date: 2026-11-14
+    id: datazone-lists
+    decision: The 2001 and 2011 data zone codes are parsed from the text with a status and checked against the lists the sibling projects pin, same file, same hash. A well formed code not in its list stops the build.
+    why: Carried over from uprn-epc. DATA_ZONE carries values that are not data zones (294 rows such as 00QQMB) and DATA_ZONE_2011 carries NA in 40 rows. In 2026Q3 every well formed code is in its list.
+    status: in_force
+  - date: 2026-11-14
+    id: data-removed-is-missing
+    decision: The text 'Data removed' is the publisher's missing value in four columns and only there, POTENTIAL_ENERGY_PERFORMANCE_RATING and its band, ASSET_RATING and its band. The typed copy of the potential rating is NULL exactly where the text is that. Two checks stop the build, a rating cell that is neither a number nor exactly that text, and a rating that is 'Data removed' when its band is not or the reverse.
+    why: The publication note says a value outside its permitted range is marked 'data removed', and that the band follows the rating. In 2026Q3 it stands in 1,712 potential rating cells and 12,484 asset rating cells, the pairs always agree, and no other column holds it.
+    status: in_force
+  - date: 2026-11-14
+    id: typed-copies
+    decision: Typed copies exist for the identifiers, the three dates, the superseded flag, the floor area, the current rating, the potential rating, the building emission rate and the primary energy value. Every other published number stays text until a project asks for it. A typed copy is added with its measured scale, the text column is never removed, and the build fails when a value does not parse.
+    why: A join or a filter should not re-parse text. The floor area, the building emission rate and the primary energy value are the three quantities the domestic register also publishes in the same unit. The potential rating is typed because the 'Data removed' rule needs a column to act on (review of 14 November 2026). ASSET_RATING, TARGET_EMISSIONS and APPROXIMATE_ENERGY_USE stay text.
+    status: in_force
+  - date: 2026-11-14
+    id: band-text-as-published
+    decision: The band columns are kept as published, 'Carbon Neu' included, and no typed copy or recode is made. The non-domestic rating and band are never given a domestic name.
+    why: The file cuts the band text at ten characters. The non-domestic band is a cut of an emissions rate where lower is better. The domestic band comes from an energy cost score where higher is better. The same letter means different things.
+    status: in_force
+  - date: 2026-11-14
+    id: recipe-public-data-private
+    decision: The repository publishes the recipe and cites the source. The built Parquet, CSV and SQL table stay private. The source archive is held as an unpublished restricted Zenodo draft (24224180) and on the HIC OneDrive.
+    why: Carried over from uprn-epc. The address and postcode fields are under a Royal Mail notice, not the Open Government Licence, and the download URL is overwritten every quarter.
+    status: in_force
+  - date: 2026-11-14
+    id: address-lines-loaded
+    decision: The CSV and the SQL table carry ADDRESS1, ADDRESS2 and POST_TOWN as published, like every other column. The CSV goes only to the HIC OneDrive and into the HIC SQL Server. The build report and the data dictionary print no address or postcode value. Who may see the address columns stays with information governance.
+    why: Carried over from uprn-epc. The address lines are the only key for the 33,906 certificates without a Gazetteer UPRN (35.4%) and they carry the name of the building. The register is published openly with them.
+    status: in_force
+  - date: 2026-11-14
+    id: join-by-inspection-date
+    decision: The dated joins choose the certificate with the latest inspection_date_parsed on or before the cohort date and return the inspection and lodgement dates, the age in days from the inspection, and a flag for a lodgement before its inspection. The undated join returns the current certificate. No query decides expiry and no query reads the clock.
+    why: Carried over from uprn-epc. The inspection is when the assessor saw the building. In 2026Q3 lodgement follows it by a median of 8 days, by 31 to 365 days in 17,125 certificates and by over a year in 1,411, and precedes it in 195, so both dates are returned.
+    status: in_force
+  - date: 2026-11-14
+    id: tie-prefers-current-then-latest-lodged
+    decision: In the dated joins, two or more certificates of one building inspected on the latest eligible day are separated by preferring the current one (HISTORIC = False), then the one with the latest CREATED_AT. A pair still tied is ambiguous_as_of. The output carries epc_tie_candidates and epc_tie_rule.
+    why: Carried over from uprn-epc so both registers answer through one rule. In 2026Q3 it rarely applies. 11 register numbers have two certificates inspected on one day, and one of the 11 has a UPRN.
+    status: in_force
+  - date: 2026-11-14
+    id: join-output-own-columns
+    decision: Each of the three queries has its own output. A column that does not apply to a query is not returned by it. The non-domestic measurements are returned under their own names, with the three quantities shared with dwellings. The undated query returns no cohort_date, epc_age_days, historic_flag or tie column.
+    why: uprn-epc's queries select domestic columns that do not exist here, and the domestic and non-domestic ratings measure different things (reviews of 14 November 2026). The undated query takes no date, returns the current certificate and has no tie rule.
+    status: in_force
+  - date: 2026-11-14
+    id: postcode-join-ranks-before-it-compares
+    decision: The postcode join answers which buildings were at the postcode as of the cohort date. For each building with any certificate at the cohort postcode it chooses the latest eligible certificate over all the building's postcodes, then returns the building only if that certificate carries the cohort postcode. A cohort row whose postcode has certificates by the date, all on buildings whose latest certificate carries another postcode, gets no_building_at_postcode_by_date.
+    why: 258 register numbers carry two or more postcodes over their certificates. Filtering by postcode before ranking, as uprn-epc's query does, returns a building at its old postcode with its older certificate. As of 30 September 2026 that would return 262 building and postcode pairs that the building's latest certificate contradicts (review of 14 November 2026).
+    status: in_force
+  - date: 2026-11-14
+    id: bulk-insert-codepage-utf8
+    decision: The generated BULK INSERT names CODEPAGE = '65001'. The staging columns keep the UTF-8 collation, which governs how the bytes are stored, not how the file is read.
+    why: Carried over from uprn-epc, whose first container probe failed the digest on every cell with a non-ASCII character. In 2026Q3, 708 cells hold one, most of them Gaelic ward names in CONSTITUENCY_LABEL.
+    status: in_force

@@ -1,0 +1,15 @@
+== 1. A bounded column, ADDRESS1, nvarchar(100)
+  98 letters and one supplementary character: 99 characters, 100 units: builds, longest recorded 100
+  99 letters and one supplementary character: 100 characters, 101 units: stopped: extract.text_within_width: longest value per column over its width
+== 2. The nvarchar(max) column, IMPROVEMENT_RECOMMENDATIONS, width 8,000
+  4,450 letters and one supplementary character: 4451 characters, 4452 units, longest recorded 4452, cells with such a character {'IMPROVEMENT_RECOMMENDATIONS': 1}
+  7998 letters and one: 8000 units: builds
+  7999 letters and one: 8001 units: stopped: extract.text_within_width: longest value per column over its width
+== 3. The notebook's own helper, taken from the generated notebook
+  characters [3, 100, 4451, 3, 12, 4]
+  notebook    [3, 101, 4452, 6, 12, 4]
+  UTF-16      [3, 101, 4452, 6, 12, 4]
+  step 4 uses the helper for the limit of a bounded column and for the longest value sent
+== 4. The real release
+  cells with a supplementary character: none; CSV SHA256 d43cd944e613c67e, digest 176041734596302563122
+all assertions passed

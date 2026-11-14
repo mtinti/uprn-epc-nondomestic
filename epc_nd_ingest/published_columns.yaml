@@ -1,0 +1,45 @@
+# The 38 published columns of the extract, in file order: the machine name (header row 1),
+# the publisher's label (header row 2, which holds U+FFFD where the publisher's file had a
+# superscript 2), and the longest value measured over all 95,719 rows of release 2026Q3
+# (docs/profile_2026-11-14.txt). python -m epc_nd_ingest.columns turns this into
+# output_schema.yaml. Pinned 14 November 2026; a later release with a different header fails the build.
+version: 1
+columns:
+  - {name: 'HISTORIC', label: "Historical", max_len: 5}
+  - {name: 'BUILDING_REFERENCE_NUMBER', label: "Property_UPRN", max_len: 10}
+  - {name: 'OSG_REFERENCE_NUMBER', label: "OSG_UPRN", max_len: 12}
+  - {name: 'ADDRESS1', label: "Address1", max_len: 85}
+  - {name: 'ADDRESS2', label: "Address2", max_len: 50}
+  - {name: 'POST_TOWN', label: "Post Town", max_len: 37}
+  - {name: 'POSTCODE', label: "Postcode", max_len: 10}
+  - {name: 'INSPECTION_DATE', label: "Date of Assessment", max_len: 10}
+  - {name: 'LODGEMENT_DATE', label: "Date of Certificate", max_len: 10}
+  - {name: 'PROPERTY_TYPE_SHORT', label: "Property Short Description", max_len: 30}
+  - {name: 'PROPERTY_TYPE', label: "Property Type", max_len: 76}
+  - {name: 'FLOOR_AREA', label: "Total floor area (m�)", max_len: 6}
+  - {name: 'CURRENT_ENERGY_PERFORMANCE_RATING', label: "Current Energy Performance Rating", max_len: 5}
+  - {name: 'CURRENT_ENERGY_PERFORMANCE_BAND', label: "Energy Band", max_len: 10}
+  - {name: 'POTENTIAL_ENERGY_PERFORMANCE_RATING', label: "Potential Energy Performance Rating", max_len: 12}
+  - {name: 'POTENTIAL_ENERGY_PERFORMANCE_BAND', label: "Potential Band", max_len: 12}
+  - {name: 'NEW_BUILD_ENERGY_PERFORMANCE_RATING', label: "New Build Benchmark Rating", max_len: 4}
+  - {name: 'NEW_BUILD_ENERGY_PERFORMANCE_BAND', label: "New Build Benchmark Band", max_len: 2}
+  - {name: 'MEETS_2002_STANDARD', label: "Compliant 2002", max_len: 1}
+  - {name: 'ASSET_RATING', label: "Comparative Asset Rating", max_len: 12}
+  - {name: 'ASSET_RATING_BAND', label: "Comparative Energy Band", max_len: 12}
+  - {name: 'BUILDING_EMISSIONS', label: "EPC Rating BER", max_len: 8}
+  - {name: 'RENEWABLE_SOURCES', label: "Renewable Energy Source", max_len: 20}
+  - {name: 'ELECTRICITY_SOURCE', label: "Electricity_Source", max_len: 13}
+  - {name: 'MAIN_HEATING_FUEL', label: "Main Heating Fuel", max_len: 37}
+  - {name: 'BUILDING_ENVIRONMENT', label: "Building Environment", max_len: 38}
+  - {name: 'PRIMARY_ENERGY_VALUE', label: "Actual Building Data Primary Energy Indicator", max_len: 6}
+  - {name: 'APPROXIMATE_ENERGY_USE', label: "Actual Building Data Approx Energy Use", max_len: 6}
+  - {name: 'IMPROVEMENT_RECOMMENDATIONS', label: "Recommendations", max_len: 4451}
+  - {name: 'LOCAL_AUTHORITY', label: "Local Authority Identifier", max_len: 4}
+  - {name: 'DATA_ZONE', label: "Data Zone", max_len: 64}
+  - {name: 'CONSTITUENCY', label: "Ward Code", max_len: 6}
+  - {name: 'CONSTITUENCY_LABEL', label: "Ward Name", max_len: 53}
+  - {name: 'TRANSACTION_TYPE', label: "Transaction Type", max_len: 50}
+  - {name: 'TARGET_EMISSIONS', label: "EPC Rating TER", max_len: 7}
+  - {name: 'DATA_ZONE_2011', label: "Data Zone 2011", max_len: 75}
+  - {name: 'CREATED_AT', label: "Lodgement Date", max_len: 19}
+  - {name: 'REPORT_REFERENCE_NUMBER', label: "RRN", max_len: 24}

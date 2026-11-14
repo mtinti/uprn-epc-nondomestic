@@ -1,0 +1,73 @@
+# Pinned sources for the non-domestic EPC build. Version 1, 14 November 2026.
+#
+# A pin is never updated by the pipeline: changed bytes stop it. One release of the extract is
+# one archive with one CSV member and the publisher's note. The paths are relative to
+# data/sources. A later quarterly release is a new release block, never an edit of this one.
+version: 1
+
+publisher: Scottish Government, EPCenquiries@gov.scot
+licence: >-
+  Open Government Licence v3.0 for every field except ADDRESS1, ADDRESS2, POST_TOWN and POSTCODE,
+  which carry a Royal Mail copyright notice: use for energy-efficiency purposes permitted by the
+  notice, and the notice must accompany any sharing (publication note, page 2).
+attribution:
+  - "Contains public sector information licensed under the Open Government Licence v3.0. Source: Scottish Government, Non-domestic Energy Performance Certificates, extended historic dataset, January 2013 to Q3 2026 (register extract of 21 October 2026)."
+  - "Address and postcode fields: Royal Mail copyright notice as printed in the publication note."
+
+# What may be archived off site. restricted: the archive is held in a restricted Zenodo record
+# (files on request, metadata and hashes public), because the download URL is overwritten every
+# quarter and the address columns are not under the Open Government Licence. The record is a
+# draft, unpublished, created 14 November 2026 (docs/EPC_NonDomestic_Plan.md, section 2). Its
+# reserved DOI, 10.5281/zenodo.24224180, resolves only once the record is published.
+redistribution: restricted
+zenodo_draft: 24224180
+
+publisher_pages:
+  catalogue: https://data.gov.scot/dataset/non_domestic_energy_performance_certificates___extended_historic_dataset_to_q1_2026
+  resource: https://data.gov.scot/dataset/non_domestic_energy_performance_certificates___extended_historic_dataset_to_q1_2026/resource/c7873ae4-d19a-43ee-8d9f-415e7d0f05d7/download
+
+release:
+  epc_release: 2026Q3
+  # The date the publication note gives. The archive dates the CSV member 8 October 2026
+  # (data/sources/epc_nondomestic_2026Q3/SOURCES.md).
+  extracted_from_register: 2026-10-21
+  downloaded: 2026-11-11
+  # The last day a certificate of this release can have been lodged. A CREATED_AT after it
+  # stops the build: the file would not be this release.
+  quarter_end: 2026-09-30
+  archive:
+    file: epc_nondomestic_2026Q3/nondomestic_epc_extended_historic_Q3_2026.7z
+    sha256: 388d7d40438971c051515676827840df4f461fcc73b8fabe0d033b07cbc39c06
+    bytes: 9301781
+  note:
+    file: epc_nondomestic_2026Q3/publication_note.pdf
+    sha256: 123fcfc73ecf79d3f7d16ddf78aad87167f81865dc6116cb3566b9f44b7d4e24
+    bytes: 264448
+    archive_member: "EPC Data - Q3 2026 Extract - EPD Extended Historic Data Publication Note - Non-domestic Buildings.pdf"
+  # The one file the build reads, with the row count it held in this release. The build fails
+  # on a different hash or a different count. The key of the table has no file component, so
+  # the registry must name exactly one member.
+  members:
+  - {file: epc_nondomestic_2026Q3/extracted/AltHistoricExtract2013to2026ND.csv, sha256: 304c03a6217d4d220c0595e00fa6c4c096e619dc14b6b26ac5af017fbb2f712d, bytes: 141193680, rows: 95719}
+
+# Reference lists of data zones, each the same file, URL and hash a sibling project pins.
+datazone_lists:
+  2001:
+    file: datazones/SG_SIMD_2012.dbf
+    sha256: 4dc58c30c7d023e4e39739e9d2e56fa9f4153a41ef4eeacbe9ba95d60e319095
+    format: dbf
+    code_column: DataZone
+    zones: 6505
+    pinned_in: postcode-simd simd_ingest/sources.yaml, sg_simd_2012
+    url: https://maps.gov.scot/ATOM/shapefiles/SG_SIMD_2012.zip
+    mirror: https://zenodo.org/records/23119743/files/sg_simd_2012__SG_SIMD_2012.zip?download=1
+  2011:
+    file: datazones/DataZone2011_lookup.csv
+    sha256: 688416b875733f62d5ceede1ac2b73c9db021e816ea8a9c6c58da0f105b601b6
+    format: csv
+    code_column: DZ2011_Code
+    encoding: cp1252
+    zones: 6976
+    pinned_in: datazone-ahah ahah_ingest/sources.yaml, datazone_lists
+    url: https://data.gov.scot/dataset/2011_data_zone_lookup/resource/20ad5f65-c5c2-407e-8355-7c25bf579e87/download
+    page: https://data.gov.scot/dataset/2011_data_zone_lookup
